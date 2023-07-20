@@ -3738,6 +3738,8 @@ export function WithSubHeaders() {
       ),
     ];
 
+    const disabled = customers.every(({disabled}) => disabled);
+
     return (
       <Fragment key={subheaderId}>
         <IndexTable.Row
@@ -3745,7 +3747,7 @@ export function WithSubHeaders() {
           id={`Subheader-${index}`}
           position={position}
           selected={selected}
-          disabled={index === 1}
+          disabled={disabled}
           accessibilityLabel={`Select all customers whose last order was placed on ${orderDate}`}
         >
           <IndexTable.Cell scope="col" as="th" id={subheaderId}>
