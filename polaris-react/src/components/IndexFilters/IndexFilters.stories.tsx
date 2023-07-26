@@ -329,12 +329,13 @@ export function Default() {
   return (
     <Card padding="0">
       <IndexFilters
+        loading={queryValue !== ''}
         sortOptions={sortOptions}
         sortSelected={sortSelected}
         queryValue={queryValue}
         queryPlaceholder="Searching in all"
         onQueryChange={handleFiltersQueryChange}
-        onQueryClear={() => {}}
+        onQueryClear={() => setQueryValue('')}
         onSort={setSortSelected}
         primaryAction={primaryAction}
         cancelAction={{
